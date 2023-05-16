@@ -33,4 +33,9 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 **File transfer**
 
 Move the .zshrc, .vimrc and .p10k.zsh files to the `$HOME` directory
+```shell
+git clone https://github.com/chrispduck/.config.git
+cd .config
+cp .zshrc .vimrc .p10k.zsh $HOME
+```
 
