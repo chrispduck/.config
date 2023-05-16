@@ -192,7 +192,7 @@ autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
 # Compiler course
-export PATH="/Users/cjp/.deno/bin:$PATH"
+export PATH=$HOME/.deno/bin:$PATH
 
 # IntelliJ pycharm shortcut 
 alias pycharm="/Applications/PyCharm.app/Contents/MacOS/pycharm . > /dev/null 2>&1 &"
