@@ -110,8 +110,9 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-
-eval "$(pyenv init -)"
+####################
+### CUSTOM STUFF ###
+####################
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -127,11 +128,6 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
-
-export PATH="$PATH:/Users/cjp/.foundry/bin"
-autoload -U compinit
-compinit -i
 
 # ----------------------
 # Git Aliases
@@ -170,15 +166,16 @@ alias gstd='git stash drop'
 alias gstl='git stash list'
 alias gstp='git stash pop'
 alias gsts='git stash save'
+
 # ----------------------
 # Git Functions
 # ----------------------
 # Git log find by commit message
 function glf() { git log --all --grep="$1"; }
 
-
 # Poetry
 export PATH=$HOME/.local/bin:$PATH
+
 # Heroku DB
 export DATABASE_URL=postgres://$(whoami)
 
@@ -187,12 +184,20 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /opt/homebrew/bin/terraform terraform
+# Foundry
+export PATH=$PATH:$HOME/.foundry/bin
 
 # Compiler course
 export PATH=$HOME/.deno/bin:$PATH
 
-# IntelliJ pycharm shortcut 
+# IntelliJ pycharm shortcut
 alias pycharm="/Applications/PyCharm.app/Contents/MacOS/pycharm . > /dev/null 2>&1 &"
+
+# Zsh shell autocomplete
+autoload -U compinit && compinit -i
+
+# Bash shell autocomplete
+autoload -U +X bashcompinit && bashcompinit
+
+# Terraform autocomplete
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
