@@ -16,6 +16,8 @@ curl -O https://raw.githubusercontent.com/MartinSeeler/iterm2-material-design/ma
 ```
 
 **ZSH**
+
+Pre-requisites: `git` and `brew` installed. 
 ```
 # Install zsh
 brew install zsh 
@@ -39,3 +41,9 @@ cd .config
 cp .zshrc .vimrc .p10k.zsh $HOME
 ```
 
+
+** Make ZSH default shell ** 
+```shell
+chsh -s $(which zsh)
+```
+    
