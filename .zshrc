@@ -201,3 +201,7 @@ autoload -U +X bashcompinit && bashcompinit
 
 # Terraform autocomplete
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
+
+# Kubectl
+alias k=kubectl
+complete -o default -F __start_kubectl k
